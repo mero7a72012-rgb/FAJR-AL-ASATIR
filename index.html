@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a0c">
+
+  <title>فجر الأساطير | بطولة Haven</title>
+  <meta name="description" content="الموقع الرسمي لبطولة فجر الأساطير برعاية Haven">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- شريط التنقل -->
+<header class="site-header">
+  <div class="container nav-container">
+
+    <a href="#home" class="brand">
+      <span class="brand-symbol">⚔</span>
+      <span>
+        <strong>فجر الأساطير</strong>
+        <small>FAJR AL-ASATIR</small>
+      </span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="#home">الرئيسية</a>
+      <a href="#standings">الترتيب</a>
+      <a href="#matches">المباريات</a>
+      <a href="#teams">الفرق</a>
+      <a href="#announcements">الإعلانات</a>
+      <a href="#champions">الأبطال</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#standings" class="nav-button">اكتشف البطولة</a>
+
+      <button type="button" id="admin-open" class="admin-entry">
+        Admin <span>⚙️</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- الواجهة الرئيسية -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+      <span class="hero-tag">✦ THE LEGEND BEGINS ✦</span>
+
+      <p class="hero-sponsor">بـرعـايـة HAVEN</p>
+
+      <h1>
+        فجر
+        <span>الأساطير</span>
+      </h1>
+
+      <p class="hero-description">
+        أربع فرق، منافسة واحدة، ومجد لا يُنسى.
+        هنا تُصنع الأساطير.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#standings" class="primary-button">استكشف الترتيب</a>
+        <a href="#teams" class="secondary-button">تعرّف على الفرق</a>
+      </div>
+
+      <div class="hero-bottom">
+        <span>⚔ ساحة الأساطير</span>
+        <span>✦ بطولة Haven الرسمية ✦</span>
+        <span>🎮 موسم المنافسة</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- حالة الاتصال -->
+  <div class="connection-bar">
+    <div class="container">
+      <span id="connection-status">جاري الاتصال بقاعدة البيانات...</span>
+    </div>
+  </div>
+
+  <!-- مقدمة البطولة -->
+  <section class="intro-section">
+    <div class="container section-heading">
+      <span class="section-kicker">WELCOME TO THE ARENA</span>
+      <h2>حيث تبدأ <span>الحكاية</span></h2>
+      <p>لا مكان للصدفة في ساحة الأبطال. كل مواجهة تكتب فصلًا جديدًا.</p>
+    </div>
+  </section>
+
+  <!-- ترتيب البطولة -->
+  <section class="content-section" id="standings">
+    <div class="container">
+
+      <div class="section-title">
+        <div>
+          <span class="section-kicker">LEAGUE RANKINGS</span>
+          <h2>جدول <span>الترتيب</span></h2>
+        </div>
+        <span class="section-icon">🏆</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th>المركز</th>
+              <th>الفريق</th>
+              <th>لعب</th>
+              <th>فاز</th>
+              <th>تعادل</th>
+              <th>خسر</th>
+              <th>له</th>
+              <th>عليه</th>
+              <th>الفارق</th>
+              <th>النقاط</th>
+            </tr>
+          </thead>
+
+          <tbody id="standings-body">
+            <tr>
+              <td colspan="10">جاري تحميل الترتيب...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- المباريات -->
+  <section class="content-section alternate-section" id="matches">
+    <div class="container">
+
+      <div class="section-title">
+        <div>
+          <span class="section-kicker">BATTLES & RESULTS</span>
+          <h2>ساحة <span>المواجهات</span></h2>
+        </div>
+        <span class="section-icon">⚔</span>
+      </div>
+
+      <div class="matches-grid" id="matches-list">
+        <p class="empty-message">سيتم عرض المباريات هنا.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- الفرق -->
+  <section class="content-section" id="teams">
+    <div class="container">
+
+      <div class="section-title">
+        <div>
+          <span class="section-kicker">THE FOUR LEGENDS</span>
+          <h2>الفرق <span>المتنافسة</span></h2>
+        </div>
+        <span class="section-icon">🎮</span>
+      </div>
+
+      <div class="teams-grid" id="teams-list">
+        <p class="empty-message">جاري تحميل الفرق...</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- الإعلانات -->
+  <section class="content-section alternate-section" id="announcements">
+    <div class="container">
+
+      <div class="section-title">
+        <div>
+          <span class="section-kicker">LATEST NEWS</span>
+          <h2>إعلانات <span>البطولة</span></h2>
+        </div>
+        <span class="section-icon">📜</span>
+      </div>
+
+      <div class="announcements-list" id="announcements-list">
+        <p class="empty-message">لا توجد إعلانات حاليًا.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- الأبطال وأفضل اللاعبين -->
+  <section class="content-section" id="champions">
+    <div class="container">
+
+      <div class="section-title">
+        <div>
+          <span class="section-kicker">HALL OF FAME</span>
+          <h2>سجل <span>الأساطير</span></h2>
+        </div>
+        <span class="section-icon">👑</span>
+      </div>
+
+      <div class="history-grid">
+
+        <div class="history-panel">
+          <h3>🏆 أبطال المواسم</h3>
+          <div id="champions-list">
+            <p class="empty-message">سيتم عرض سجل الأبطال هنا.</p>
+          </div>
+        </div>
+
+        <div class="history-panel">
+          <h3>⭐ نجوم البطولة</h3>
+          <div id="performers-list">
+            <p class="empty-message">سيتم عرض أفضل اللاعبين هنا.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- التذييل -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-symbol">⚔</div>
+    <h2>فجر الأساطير</h2>
+    <p>كل أسطورة تبدأ بمواجهة.</p>
+
+    <span>© 2026 Fajr Al-Asatir · Sponsored by Haven</span>
+
+    <!-- حقوق البرمجة والتصميم -->
+    <div class="creator-credit">
+      <span class="creator-line"></span>
+      <p>Programming & Design by</p>
+
+      <h3 class="creator-name">
+        Commander Nezuko <span>⚜️</span>
+      </h3>
+
+      <p class="creator-role">Website Developer & Designer</p>
+      <small>All Rights Reserved</small>
+    </div>
+
+  </div>
+</footer>
+
+<!-- نافذة تسجيل دخول المسؤول -->
+<div class="admin-modal" id="admin-modal">
+  <div class="admin-modal-card">
+
+    <button type="button" class="admin-close" id="admin-close">×</button>
+
+    <div class="login-symbol">⚔</div>
+    <p class="eyebrow">FAJR AL-ASATIR</p>
+
+    <h2>Admin Login</h2>
+    <p class="subtitle">تسجيل دخول مسؤول البطولة</p>
+
+    <form id="loginForm">
+
+      <label for="email">البريد الإلكتروني</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="أدخل البريد الإلكتروني"
+        required
+      >
+
+      <label for="password">كلمة المرور</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="أدخل كلمة المرور"
+        required
+      >
+
+      <button type="submit">تسجيل الدخول</button>
+      <p id="loginMessage" role="status"></p>
+
+    </form>
+
+  </div>
+</div>
+
+<!-- لوحة تحكم المسؤول -->
+<section id="admin-dashboard" class="admin-dashboard" aria-hidden="true">
+
+  <!-- القائمة الجانبية -->
+  <aside class="admin-sidebar">
+
+    <div class="admin-brand">
+      <span>⚔</span>
+      <div>
+        <strong>فجر الأساطير</strong>
+        <small>ADMIN PANEL</small>
+      </div>
+    </div>
+
+    <div class="admin-menu-title">القائمة الرئيسية</div>
+
+    <nav class="admin-menu">
+
+      <button type="button" class="admin-menu-item active" data-admin-section="overview">
+        <span>⌂</span> الرئيسية
+      </button>
+
+      <button type="button" class="admin-menu-item" data-admin-section="matches">
+        <span>⚔</span> المباريات
+      </button>
+
+      <button type="button" class="admin-menu-item" data-admin-section="teams">
+        <span>♟</span> الفرق
+      </button>
+
+      <button type="button" class="admin-menu-item" data-admin-section="announcements">
+        <span>▤</span> الإعلانات
+      </button>
+
+      <button type="button" class="admin-menu-item" data-admin-section="champions">
+        <span>♛</span> سجل الأبطال
+      </button>
+
+      <button type="button" class="admin-menu-item" data-admin-section="performers">
+        <span>★</span> اللاعبون المميزون
+      </button>
+
+      <button type="button" class="admin-menu-item" data-admin-section="admins">
+        <span>♙</span> إدارة المسؤولين
+      </button>
+
+    </nav>
+
+    <button type="button" id="admin-logout" class="admin-logout">
+      تسجيل الخروج
+    </button>
+
+  </aside>
+
+  <!-- المحتوى الرئيسي -->
+  <div class="admin-main">
+
+    <header class="admin-topbar">
+      <div>
+        <p>FAJR AL-ASATIR</p>
+        <h1>لوحة التحكم</h1>
+      </div>
+
+      <span class="admin-account-label">ADMIN ACCOUNT</span>
+    </header>
+
+    <!-- الرئيسية -->
+    <section class="admin-view active" data-admin-view="overview">
+
+      <h2>مرحبًا بك في إدارة البطولة</h2>
+      <p>من هنا يمكنك التحكم في جميع بيانات بطولة فجر الأساطير.</p>
+
+      <div class="admin-stats">
+
+        <article class="admin-stat-card">
+          <span>الفرق المشاركة</span>
+          <strong id="admin-team-count">—</strong>
+        </article>
+
+        <article class="admin-stat-card">
+          <span>إجمالي المباريات</span>
+          <strong id="admin-match-count">—</strong>
+        </article>
+
+        <article class="admin-stat-card">
+          <span>الإعلانات</span>
+          <strong id="admin-announcement-count">—</strong>
+        </article>
+
+        <article class="admin-stat-card">
+          <span>اللاعبون المميزون</span>
+          <strong id="admin-performer-count">—</strong>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- إدارة المباريات -->
+    <section class="admin-view" data-admin-view="matches">
+
+      <h2>إدارة المباريات</h2>
+      <p>إضافة المباريات وتسجيل النتائج وإدارة المواجهات.</p>
+
+      <form id="admin-match-form" class="admin-form">
+
+        <label for="match-round">اسم الجولة</label>
+        <input
+          type="text"
+          id="match-round"
+          placeholder="أدخل اسم الجولة"
+          required
+        >
+
+        <label for="match-team-a">الفريق الأول</label>
+        <input
+          type="text"
+          id="match-team-a"
+          placeholder="أدخل اسم الفريق الأول"
+          required
+        >
+
+        <label for="match-team-b">الفريق الثاني</label>
+        <input
+          type="text"
+          id="match-team-b"
+          placeholder="أدخل اسم الفريق الثاني"
+          required
+        >
+
+        <label for="match-date">موعد المباراة</label>
+        <input type="datetime-local" id="match-date" required>
+
+        <label for="match-score-a">نتيجة الفريق الأول</label>
+        <input
+          type="number"
+          id="match-score-a"
+          min="0"
+          step="1"
+          placeholder="أدخل النتيجة"
+        >
+
+        <label for="match-score-b">نتيجة الفريق الثاني</label>
+        <input
+          type="number"
+          id="match-score-b"
+          min="0"
+          step="1"
+          placeholder="أدخل النتيجة"
+        >
+
+        <button type="submit">إضافة المباراة</button>
+
+        <p id="match-form-message" role="status"></p>
+
+      </form>
+
+      <div id="admin-matches-list"></div>
+
+    </section>
+
+    <!-- إدارة الفرق -->
+    <section class="admin-view" data-admin-view="teams">
+
+      <h2>إدارة الفرق</h2>
+      <p>تعديل بيانات الفرق المشاركة في البطولة.</p>
+
+      <div id="admin-teams-list"></div>
+
+    </section>
+
+    <!-- إدارة الإعلانات -->
+    <section class="admin-view" data-admin-view="announcements">
+
+      <h2>إدارة الإعلانات</h2>
+      <p>إضافة الإعلانات وتعديلها وحذفها من الموقع.</p>
+
+      <form id="admin-announcement-form" class="admin-form">
+
+        <label for="announcement-title">عنوان الإعلان</label>
+        <input
+          type="text"
+          id="announcement-title"
+          placeholder="أدخل عنوان الإعلان"
+          required
+        >
+
+        <label for="announcement-body">محتوى الإعلان</label>
+        <textarea
+          id="announcement-body"
+          placeholder="اكتب محتوى الإعلان"
+          required
+        ></textarea>
+
+        <button type="submit">نشر الإعلان</button>
+
+        <p id="announcement-form-message" role="status"></p>
+
+      </form>
+
+      <div id="admin-announcements-list"></div>
+
+    </section>
+
+    <!-- إدارة سجل الأبطال -->
+    <section class="admin-view" data-admin-view="champions">
+
+      <h2>إدارة سجل الأبطال</h2>
+      <p>إضافة أبطال المواسم وتعديل بياناتهم وحذفها.</p>
+
+      <form id="admin-champion-form" class="admin-form">
+
+        <label for="champion-title">اسم البطل أو الفريق</label>
+        <input
+          type="text"
+          id="champion-title"
+          placeholder="أدخل اسم البطل أو الفريق"
+          required
+        >
+
+        <label for="champion-details">تفاصيل الإنجاز</label>
+        <textarea
+          id="champion-details"
+          placeholder="اكتب تفاصيل الإنجاز أو الموسم"
+          required
+        ></textarea>
+
+        <label for="champion-rank">مركز البطل على المنصة</label>
+        <select id="champion-rank" required>
+          <option value="">اختر المركز</option>
+          <option value="1">🥇 المركز الأول</option>
+          <option value="2">🥈 المركز الثاني</option>
+          <option value="3">🥉 المركز الثالث</option>
+        </select>
+
+        <button type="submit">إضافة إلى سجل الأبطال</button>
+
+        <p id="champion-form-message" role="status"></p>
+
+      </form>
+
+      <div id="admin-champions-list"></div>
+
+    </section>
+
+    <!-- إدارة اللاعبين المميزين -->
+    <section class="admin-view" data-admin-view="performers">
+
+      <h2>إدارة اللاعبين المميزين</h2>
+      <p>إضافة اللاعبين المميزين وتسجيل إنجازاتهم.</p>
+
+      <form id="admin-performer-form" class="admin-form">
+
+        <label for="performer-name">اسم اللاعب</label>
+        <input
+          type="text"
+          id="performer-name"
+          placeholder="أدخل اسم اللاعب"
+          required
+        >
+
+        <label for="performer-team">الفريق</label>
+        <select id="performer-team" required>
+          <option value="">اختر الفريق</option>
+        </select>
+
+        <label for="performer-achievement">الإنجاز</label>
+        <textarea
+          id="performer-achievement"
+          placeholder="اكتب إنجاز اللاعب"
+          required
+        ></textarea>
+
+        <label for="performer-rank">مركز اللاعب على المنصة</label>
+        <select id="performer-rank" required>
+          <option value="">اختر المركز</option>
+          <option value="1">🥇 المركز الأول</option>
+          <option value="2">🥈 المركز الثاني</option>
+          <option value="3">🥉 المركز الثالث</option>
+        </select>
+
+        <button type="submit">إضافة اللاعب</button>
+
+        <p id="performer-form-message" role="status"></p>
+
+      </form>
+
+      <div id="admin-performers-list"></div>
+
+    </section>
+
+   
+<!-- إدارة المسؤولين -->
+<section class="admin-view" data-admin-view="admins">
+
+  <h2>إدارة المسؤولين</h2>
+  <p>إضافة مسؤول جديد أو سحب صلاحيات مسؤول حالي.</p>
+
+  <form id="admin-add-form" class="admin-form">
+
+    <label for="new-admin-email">
+      البريد الإلكتروني للمسؤول الجديد
+    </label>
+
+    <input
+      type="email"
+      id="new-admin-email"
+      placeholder="أدخل البريد الإلكتروني"
+      required
+    >
+
+    <button type="submit">إضافة مسؤول</button>
+
+    <p id="admin-manage-message"></p>
+
+  </form>
+
+  <h3>المسؤولون الحاليون</h3>
+
+  <div id="admin-users-list"></div>
+
+</section>
+  </div>
+
+</section>
+
+<!-- PASSWORD RECOVERY MODAL -->
+<div id="password-recovery-modal" class="password-recovery-modal">
+  <div class="password-recovery-card">
+    <div class="recovery-symbol">🔐</div>
+    <h2>تعيين كلمة مرور جديدة</h2>
+    <p>اكتب كلمة المرور الجديدة لحساب المسؤول.</p>
+
+    <form id="recoveryForm">
+      <label for="newPassword">كلمة المرور الجديدة</label>
+      <input
+        type="password"
+        id="newPassword"
+        minlength="8"
+        autocomplete="new-password"
+        required
+        placeholder="8 أحرف على الأقل"
+      >
+
+      <label for="confirmPassword">تأكيد كلمة المرور</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        minlength="8"
+        autocomplete="new-password"
+        required
+        placeholder="أعد كتابة كلمة المرور"
+      >
+
+      <button type="submit" id="recoverySubmit">
+        حفظ كلمة المرور
+      </button>
+
+      <p id="recoveryMessage" role="status"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ملفات JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
